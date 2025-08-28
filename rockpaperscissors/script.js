@@ -24,24 +24,24 @@ function skjulResult() {
 
 function rockClick() {
   skjulResult();
-  userChoice = "Rock";
+  userChoice = "rock";
   computerGuess();
 }
 
 function scissorsClick() {
   skjulResult();
-  userChoice = "Scissors";
+  userChoice = "scissors";
   computerGuess();
 }
 
 function paperClick() {
   skjulResult();
-  userChoice = "Paper";
+  userChoice = "paper";
   computerGuess();
 }
 
 function computerGuess() {
-  const choice_arr = ["Rock", "Paper", "Scissors"];
+  const choice_arr = ["rock", "paper", "scissors"];
   const randomNumber = Math.floor(Math.random() * 3);
   computerChoice = choice_arr[randomNumber];
 
@@ -62,6 +62,23 @@ function animationEnd() {
   console.log("Animation afsluttet");
   player1.classList.remove("shake");
   player2.classList.remove("shake");
+
+  if (userChoice === "rock") {
+    player1.classList.add("rock");
+  } else if (userChoice === "paper") {
+    player1.classList.add("paper");
+  } else if (userChoice === "scissors") {
+    player1.classList.add("scissors");
+  }
+
+  if (computerChoice === "rock") {
+    player2.classList.add("rock");
+  } else if (computerChoice === "paper") {
+    player2.classList.add("paper");
+  } else if (computerChoice === "scissors") {
+    player2.classList.add("scissors");
+  }
+
   showResult();
 }
 
